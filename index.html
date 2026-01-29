@@ -71,18 +71,18 @@
     const card = document.getElementById("card");
 
     function moverBotao() {
-      const largura = window.innerWidth - botaoNao.offsetWidth;
-      const altura = window.innerHeight - botaoNao.offsetHeight;
+      const largura = window.innerWidth - botaoNão.offsetWidth;
+      const altura = window.innerHeight - botaoNão.offsetHeight;
 
       const x = Math.random() * largura;
       const y = Math.random() * altura;
 
-      botaoNao.style.left = x + "px";
-      botaoNao.style.top = y + "px";
+      botaoNão.style.left = x + "px";
+      botaoNão.style.top = y + "px";
     }
 
-    botaoNao.addEventListener("mouseover", moverBotao);
-    botaoNao.addEventListener("touchstart", moverBotao);
+    botaoNão.addEventListener("mouseover", moverBotao);
+    botaoNão.addEventListener("touchstart", moverBotao);
 
     botaoSim.addEventListener("click", () => {
       card.innerHTML = `
