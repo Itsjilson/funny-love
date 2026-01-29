@@ -1,124 +1,28 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Funny Love 💖</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  const botaoNao = document.getElementById("nao");
+  const botaoSim = document.getElementById("sim");
+  const card = document.getElementById("card");
 
-  <style>
-    body {
-      height: 100vh;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      font-family: 'Comic Sans MS', Arial, sans-serif;
-      overflow: hidden;
-    }
+  function moverBotao() {
+    const largura = window.innerWidth - botaoNao.offsetWidth;
+    const altura = window.innerHeight - botaoNao.offsetHeight;
 
-    .card {
-      background: white;
-      padding: 30px 25px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-      max-width: 320px;
-      width: 90%;
-    }
+    const x = Math.random() * largura;
+    const y = Math.random() * altura;
 
-    h1 {
-      color: #e63946;
-      margin-bottom: 25px;
-    }
+    botaoNao.style.left = x + "px";
+    botaoNao.style.top = y + "px";
+  }
 
-    button {
-      font-size: 18px;
-      padding: 12px 22px;
-      margin: 10px;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-    }
+  botaoNao.addEventListener("mouseover", moverBotao);
+  botaoNao.addEventListener("touchstart", moverBotao);
 
-    #sim {
-      background: #ff4d6d;
-      color: white;
-    }
+  botaoSim.addEventListener("click", () => {
+    const numero = "+351932639380"; // SEU NÚMERO
+    const mensagem = encodeURIComponent(
+      "Eu disse SIM 😍💖 Agora você me deve um encontro!"
+    );
 
-    #nao {
-      background: #adb5bd;
-      position: absolute;
-    }
-
-    .mensagem {
-      font-size: 20px;
-      color: #d62828;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="card" id="card">
-    <h1>Quer sair comigo? 💕🥰</h1>
-    <button id="sim">Sim 😍</button>
-    <button id="nao">Não 🙈</button>
-  </div>
-
-  <script>
-    const botaoNao = document.getElementById("nao");
-    const botaoSim = document.getElementById("sim");
-    const card = document.getElementById("card");
-
-    function moverBotao() {
-      const largura = window.innerWidth - botaoNao.offsetWidth;
-      const altura = window.innerHeight - botaoNao.offsetHeight;
-
-      const x = Math.random() * largura;
-      const y = Math.random() * altura;
-
-      botaoNao.style.left = x + "px";
-      botaoNao.style.top = y + "px";
-    }
-
-    botaoNao.addEventListener("mouseover", moverBotao);
-    botaoNao.addEventListener("touchstart", moverBotao);
-
-    botaoSim.addEventListener("click", () => {
-      card.innerHTML = `
-        <h1 class="mensagem">Essa foi uma boa escolha 🥰</h1>
-        <p class="mensagem">Uma honra estar contigo! 💖<br>
-        🎉</p>
-      `;
-      confete();
-    });
-
-    function confete() {
-      for (let i = 0; i < 40; i++) {
-        const span = document.createElement("span");
-        span.innerHTML = "💖";
-        span.style.position = "fixed";
-        span.style.left = Math.random() * 100 + "vw";
-        span.style.top = "-20px";
-        span.style.fontSize = "24px";
-        span.style.animation = "cair 3s linear forwards";
-        document.body.appendChild(span);
-
-        setTimeout(() => span.remove(), 3000);
-      }
-    }
-
-    const style = document.createElement("style");
-    style.innerHTML = `
-      @keyframes cair {
-        to {
-          transform: translateY(100vh);
-          opacity: 0;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-  </script>
-
-</body>
-</html>
+    window.location.href = `https://wa.me/${numero}?text=${mensagem}`;
+  });
+</script>
