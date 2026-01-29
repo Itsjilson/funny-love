@@ -41,12 +41,12 @@
       cursor: pointer;
     }
 
-    #Sim {
+    #sim {
       background: #ff4d6d;
       color: white;
     }
 
-    #Não {
+    #nao {
       background: #adb5bd;
       position: absolute;
     }
@@ -66,23 +66,23 @@
   </div>
 
   <script>
-    const botaoNao = document.getElementById("Não");
-    const botaoSim = document.getElementById("Sim");
+    const botaoNao = document.getElementById("nao");
+    const botaoSim = document.getElementById("sim");
     const card = document.getElementById("card");
 
     function moverBotao() {
-      const largura = window.innerWidth - botaoNão.offsetWidth;
-      const altura = window.innerHeight - botaoNão.offsetHeight;
+      const largura = window.innerWidth - botaoNao.offsetWidth;
+      const altura = window.innerHeight - botaoNao.offsetHeight;
 
       const x = Math.random() * largura;
       const y = Math.random() * altura;
 
-      botaoNão.style.left = x + "px";
-      botaoNão.style.top = y + "px";
+      botaoNao.style.left = x + "px";
+      botaoNao.style.top = y + "px";
     }
 
-    botaoNão.addEventListener("mouseover", moverBotao);
-    botaoNão.addEventListener("touchstart", moverBotao);
+    botaoNao.addEventListener("mouseover", moverBotao);
+    botaoNao.addEventListener("touchstart", moverBotao);
 
     botaoSim.addEventListener("click", () => {
       card.innerHTML = `
