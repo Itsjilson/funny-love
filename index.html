@@ -1,23 +1,19 @@
-const yesBtn = document.getElementById("yesBtn");
-const noBtn = document.getElementById("noBtn");
-
-let noCount = 0;
-
-noBtn.addEventListener("click", () => {
-    noCount++;
-    const messages = [
-        "No",
-        "Are you sure?",
-        "Maybe yes?",
-        "Think again!",
-        "Do you really want to say no?",
-        "Wait... ❤️"
-    ];
-    
-    noBtn.textContent = messages[ Math.min(noCount, messages.length - 1) ];
-    yesBtn.style.transform = `scale(${1 + noCount * 0.2})`; 
-});
-
-yesBtn.addEventListener("click", () => {
-    alert("Yay! 💖 Thank you!"); 
-});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will you be my Valentine?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine?</h1>
+        <div class="buttons">
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
